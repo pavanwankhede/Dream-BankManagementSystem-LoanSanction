@@ -1,6 +1,7 @@
 package com.dbms.loanSanction.main.serviceimpl;
 
 import java.util.Date;
+import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -44,5 +45,11 @@ public class LoanSanctionServiceImpl implements LoanSanctionServiceI{
 	            throw new SanctionLetterCreationException("Failed to save sanction letter. Please try again.");
 	        }
 	    }
+
+	@Override
+	public List<SanctionLetter> getAllSanctionLetters() {
+		 
+		return sanctionRepository.findAll();
+	}
 
 }
