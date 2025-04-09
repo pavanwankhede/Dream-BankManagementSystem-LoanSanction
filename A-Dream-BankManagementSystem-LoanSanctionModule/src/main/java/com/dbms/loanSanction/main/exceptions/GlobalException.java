@@ -23,4 +23,9 @@ public class GlobalException {
 	    return new ResponseEntity<>(errorResponse, HttpStatus.INTERNAL_SERVER_ERROR);
 	}
 
+	@ExceptionHandler(SanctionLetterNotFoundException.class)
+	public ResponseEntity<ErrorResponseDTO> handleException(SanctionLetterNotFoundException e) {
+	    ErrorResponseDTO errorResponse = new ErrorResponseDTO(e.getMessage());
+	    return new ResponseEntity<>(errorResponse, HttpStatus.NOT_FOUND);
+	}
 }

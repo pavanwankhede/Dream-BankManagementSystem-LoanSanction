@@ -12,4 +12,8 @@ public interface LoanSanctionServiceI {
 
 public List<SanctionLetter> getAllSanctionLetters();
 
+public SanctionLetter getSanctionLetterById(int id);
+
+
+
 }
