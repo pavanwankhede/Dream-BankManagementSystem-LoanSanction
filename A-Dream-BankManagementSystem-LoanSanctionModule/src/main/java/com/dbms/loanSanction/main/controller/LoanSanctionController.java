@@ -27,8 +27,7 @@ public class LoanSanctionController {
 	     @Autowired
 	    private LoanSanctionServiceI sanctionServiceI;
 	     
-	     
-	     
+	       
 	 	private static final Logger log= LoggerFactory.getLogger(LoanSanctionController.class);
 		
     @PostMapping("/addSactionLetter")		
