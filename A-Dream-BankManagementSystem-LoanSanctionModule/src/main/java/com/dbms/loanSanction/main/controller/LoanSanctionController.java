@@ -59,7 +59,7 @@ public class LoanSanctionController {
 		@GetMapping("/getBySanctionStatus/{sanctionStatus}")
 		public ResponseEntity<List<SanctionLetter>> getByStatus(@PathVariable("sanctionStatus") SanctionStatus sanctionstatus){
 			List<SanctionLetter> sanctionLetter= sanctionServiceI.getBySanctionStatus(sanctionstatus);
-			return new ResponseEntity<List<SanctionLetter>>(sanctionLetter,HttpStatus.CREATED);
+			return new ResponseEntity<List<SanctionLetter>>(sanctionLetter,HttpStatus.OK);
 		
 		}
 }
