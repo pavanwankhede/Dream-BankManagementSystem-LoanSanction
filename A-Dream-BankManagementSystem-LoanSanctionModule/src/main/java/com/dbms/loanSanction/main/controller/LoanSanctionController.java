@@ -31,14 +31,15 @@ public class LoanSanctionController {
 	     
 	 	private static final Logger log= LoggerFactory.getLogger(LoanSanctionController.class);
 		
-		@PostMapping("/addSactionLetter")
-		public ResponseEntity<SanctionLetter> saveSanctionLetter(@Valid @RequestBody SanctionLetter sanctionletter ){
+    @PostMapping("/addSactionLetter")		
+   public ResponseEntity<SanctionLetter> saveSanctionLetter(@Valid @RequestBody SanctionLetter sanctionletter )
+       {
 			
+	       log.info("Received request to save enquiries: {}", sanctionletter);
 		
-	         log.info("Received request to save enquiries: {}", sanctionletter);
-		
-	         SanctionLetter letter = sanctionServiceI.saveSanctionLetter(sanctionletter);
-			return new ResponseEntity<>(letter, HttpStatus.CREATED);
+	       SanctionLetter letter = sanctionServiceI.saveSanctionLetter(sanctionletter);
+	return new ResponseEntity<>(letter, HttpStatus.CREATED);
+	
 		}
 		
 		@GetMapping("/getAllSanctionLetters")
@@ -49,6 +50,8 @@ public class LoanSanctionController {
 			return new ResponseEntity<List<SanctionLetter>>(listLetters,HttpStatus.OK);
 			
 		}
+		
+		
 		@GetMapping("/getById/{sanctionId}")
 		public ResponseEntity<SanctionLetter> getEnquiryByID(@PathVariable("sanctionId") int id){
 			

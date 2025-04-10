@@ -49,16 +49,18 @@ public class LoanSanctionServiceImpl implements LoanSanctionServiceI{
 	        }
 	    }
 
+	
 	@Override
 	public List<SanctionLetter> getAllSanctionLetters() {
 		 
 		return sanctionRepository.findAll();
 	}
 
+	
 	@Override
 	public SanctionLetter getSanctionLetterById(int id) {
 		
-Optional<SanctionLetter> sanctionLetter=sanctionRepository.findById(id);
+       Optional<SanctionLetter> sanctionLetter=sanctionRepository.findById(id);
 		
 		if (sanctionLetter.isEmpty()) {
 			
