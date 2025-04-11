@@ -67,6 +67,7 @@ public class LoanSanctionController {
 			return new ResponseEntity<List<SanctionLetter>>(sanctionLetter,HttpStatus.OK);
 		
 		}
+		
 		@PutMapping("/updateSanctionLetter/{sanctionId}")
 		public ResponseEntity<SanctionLetter> updateById(@PathVariable ("sanctionId") int sanctionId,@RequestBody SanctionLetter sanctionletter)
 		{

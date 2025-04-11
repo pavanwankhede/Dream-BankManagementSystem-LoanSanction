@@ -116,7 +116,7 @@ public class LoanSanctionServiceImpl implements LoanSanctionServiceI{
 
 
 	@Override
-	public void deleteSanctionLetterById(int id)
+	public String deleteSanctionLetterById(int id)
 	{
 		if (sanctionRepository.existsById(id)) {
 			sanctionRepository.deleteById(id);
@@ -125,7 +125,9 @@ public class LoanSanctionServiceImpl implements LoanSanctionServiceI{
 	        log.warn("Attempted to delete non-existent SanctionLetter with ID: {}", id);
 	        throw new SanctionLetterNotFoundException("SanctionLetter with ID " + id + " not found");
 	    }
+		return null;
 	}
+	
 	}
 
 

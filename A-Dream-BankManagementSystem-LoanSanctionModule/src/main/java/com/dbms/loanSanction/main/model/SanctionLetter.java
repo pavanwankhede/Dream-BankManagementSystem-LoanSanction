@@ -56,7 +56,8 @@ public class SanctionLetter {
 
     @Size(max = 1000, message = "Terms and conditions can be up to 1000 characters")
     private String termsAndConditions;
-
+    
+    @Enumerated(EnumType.STRING)
     @NotNull(message = "Sanction status is required")
     private SanctionStatus sanctionStatus;
 

@@ -19,7 +19,7 @@ public List<SanctionLetter> getBySanctionStatus(SanctionStatus sanctionstatus);
 
 public SanctionLetter updateSanctionById(int sanctionId, SanctionLetter sanctionletter);
 
-public void deleteSanctionLetterById(int id);
+public String deleteSanctionLetterById(int id);
 
 
 
