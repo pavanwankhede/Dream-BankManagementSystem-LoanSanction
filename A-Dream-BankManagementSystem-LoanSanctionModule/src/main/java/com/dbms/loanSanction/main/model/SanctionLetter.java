@@ -70,8 +70,4 @@ public class SanctionLetter {
     // Uncomment if needed
     // private byte[] sanctionLetter;
 
-    @PrePersist
-    protected void onCreate() {
-        this.sanctionDate = new Date();
-    }
 }
