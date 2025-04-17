@@ -62,14 +62,8 @@ public class LoanSanctionController {
 		
 
 		@GetMapping("/getBySanctionStatus/{sanctionStatus}")
-		public ResponseEntity<?> getByStatus(@PathVariable("sanctionStatus") SanctionStatus sanctionstatus) {
+		public ResponseEntity<List<SanctionLetter>> getByStatus(@PathVariable("sanctionStatus") SanctionStatus sanctionstatus) {
 		    List<SanctionLetter> sanctionLetters = sanctionServiceI.getBySanctionStatus(sanctionstatus);
-
-		    if (sanctionLetters.isEmpty()) {
-		        // Return a message when no data is found
-		        return new ResponseEntity<>("No sanction letters found for status: " + sanctionstatus, HttpStatus.NOT_FOUND);
-		    }
-
 		    return new ResponseEntity<>(sanctionLetters, HttpStatus.OK);
 		}
 

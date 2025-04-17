@@ -76,9 +76,15 @@ public class LoanSanctionServiceImpl implements LoanSanctionServiceI{
 	@Override
 	public List<SanctionLetter> getBySanctionStatus(SanctionStatus sanctionstatus) {
 		
-		return sanctionRepository.findBySanctionStatus(sanctionstatus);
-	}
+		   List<SanctionLetter> sanctionLetters = sanctionRepository.findBySanctionStatus(sanctionstatus);
 
+		    if (sanctionLetters.isEmpty()) {
+		 	throw new SanctionLetterNotFoundException("No sanction letters available with the status: " + sanctionstatus);
+
+		    }
+
+		    return sanctionLetters;
+		}
 
 	@Override
 	public SanctionLetter updateSanctionById(int sanctionId, SanctionLetter sanctionletter) {
